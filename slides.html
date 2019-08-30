@@ -114,66 +114,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="formas-de-atrapar-defectos-en-el-desarrollo-de-software" class="slide level2">
 <h2>Formas de atrapar defectos en el desarrollo de software</h2>
 <ul>
+<li>Planificación
+<ul>
+<li>Requisitos claros</li>
+</ul></li>
 <li>Buenas prácticas</li>
 <li><em>Pull Request</em></li>
-<li>Tests automatizados</li>
+<li><em>Testing</em></li>
 </ul>
-</section></section>
-<section><section id="pruebas-en-el-desarrollo-de-software" class="title-slide slide level1"><h1>Pruebas en el desarrollo de software</h1></section><section id="testing" class="slide level2">
-<h2>Testing</h2>
-<ul>
-<li>Criterios para asegurar la calidad de un programa.
-<ul>
-<li>Cumple con sus propósitos.</li>
-<li>Admite todo tipo de inputs sin causar problemas.</li>
-<li>Es usable.</li>
-<li><strong>No rompe todo el sistema al ser aceptado.</strong></li>
-</ul></li>
-<li>Importante en todos los niveles de la organización.</li>
-</ul>
-</section><section id="manuales" class="slide level2">
-<h2>Manuales</h2>
-<p><img data-src="./button.gif" /></p>
-</section><section id="automatizados" class="slide level2">
-<h2>Automatizados</h2>
-<p><img data-src="./robot.gif" /></p>
-</section><section id="test-levels" class="slide level2">
-<h2>Test Levels</h2>
-<p><img data-src="./testing%20pyramid.png" /></p>
+</section><section id="por-qué-hacer-testing" class="slide level2">
+<h2>¿Por qué hacer testing?</h2>
+<p><img data-src="./it_works_on_my_local.jpg" /></p>
 </section><section class="slide level2">
 
-<p><img data-src="./testing%20cup.png" /></p>
-</section><section id="qué-debe-cumplir-un-buen-test" class="slide level2">
-<h2>Qué debe cumplir un buen test</h2>
 <ul>
-<li>Rápido</li>
-<li>Testea interfaces, no implementación</li>
-<li>Detecta bugs</li>
-<li>Consistente</li>
-<li>Claro</li>
+<li><p>Asegurar que la funcionalidad nueva cumpla con sus requisitos</p></li>
+<li><p>Asegurar que la funcionalidad nueva se integre con el sistema actual</p>
+<ul>
+<li>Que no rompa la aplicación</li>
+</ul></li>
+<li><p>Informar expectativas del código nuevo</p>
+<blockquote>
+<p>La función para verificar rut solo recibe 9 dígitos sin guión</p>
+</blockquote></li>
 </ul>
-<aside class="notes">
-Según Dong Woo Kim para <em>toast-ui</em> https://medium.com/<span class="citation" data-cites="toastui/pragmatic-front-end-testing-strategies-1-4a969ab09453">@toastui/pragmatic-front-end-testing-strategies-1-4a969ab09453</span>
-</aside>
+</section><section id="tipos-de-testing" class="slide level2">
+<h2>Tipos de testing</h2>
+<figure>
+<img data-src="./testing%20pyramid.png" alt="" /><figcaption>En desarrollo usamos los dos primeros niveles</figcaption>
+</figure>
+</section><section id="section" class="slide level2" data-background-iframe="https://www.youtube.com/embed/0GypdsJulKE?controls=0">
+<h2></h2>
 </section></section>
-<section><section id="testing-en-frontend" class="title-slide slide level1"><h1>Testing en Frontend</h1></section><section id="por-qué-tendría-que-ser-distinto-a-backend" class="slide level2">
-<h2>¿Por qué tendría que ser distinto a Backend?</h2>
+<section><section id="testing-en-frontend" class="title-slide slide level1"><h1>Testing en Frontend</h1></section><section id="particularidades" class="slide level2">
+<h2>Particularidades</h2>
 <ul>
-<li>Difícil tener un <em>oráculo de la verdad</em>. <img data-src="./witch.gif" /></li>
+<li>Difícil tener un <em>oráculo de la verdad</em>
+<ul>
+<li>Backend: Definiciones precisas</li>
+<li>Frontend: “Lo quiero un poco mas a la derecha”</li>
+</ul></li>
 </ul>
+<p><img data-src="./can&#39;t%20handle%20the%20truth.jpg" /></p>
 <aside class="notes">
 Todo software tiene distintas necesidades. En el backend hay mucha regla de negocio, la cual actúa como la verdad. En el frontend esto no es necesariamente cierto.
 <aside>
 </section><section class="slide level2">
 
 <ul>
-<li>Difícil automatizar test visuales. <img data-src="./magoo.gif" /></li>
+<li>Difícil automatizar test visuales</li>
 </ul>
+<p><img data-src="./magoo.gif" /></p>
 <aside class="notes">
 Hay herramientas para verificar que la interfaz no haya cambiado entre cambios, pero no hay nada que reemplace el juicio humano.
 </aside>
-</section><section id="qué-se-puede-hacer" class="slide level2">
-<h2>¿Qué se puede hacer?</h2>
+</section><section id="qué-se-puede-hacer-durante-el-desarrollo-de-software" class="slide level2">
+<h2>¿Qué se puede hacer durante el desarrollo de software?</h2>
 <ul>
 <li>Probar manualmente cada cambio.</li>
 <li>Usar herramientas para hacer <em>visual diffs</em>.</li>
@@ -185,7 +181,7 @@ Hay herramientas para verificar que la interfaz no haya cambiado entre cambios, 
 </ul></li>
 </ul>
 </section></section>
-<section><section id="como-probar-en-react" class="title-slide slide level1"><h1>Como probar en react</h1></section><section id="en-general" class="slide level2">
+<section><section id="como-probar-en-react" class="title-slide slide level1"><h1>Como probar en React</h1></section><section id="en-general" class="slide level2">
 <h2>En general</h2>
 <ul>
 <li>Existen herramientas para:

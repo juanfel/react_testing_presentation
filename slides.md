@@ -5,7 +5,8 @@ background-image: ./klare.png
 output:
   revealjs::revealjs_presentation:
     center: true
-    highlight: zenburn
+    reveal_plugins: ["hightlight", "zoom", "notes"]
+    highlight: solarized-dark
 ---
 
 # Como asegurar que un programa no tenga defectos
@@ -20,55 +21,41 @@ output:
 
 ## Formas de atrapar defectos en el desarrollo de software
 
+* Planificación
+  * Requisitos claros
 * Buenas prácticas
 * *Pull Request*
-* Tests automatizados
+* _Testing_
 
-# Pruebas en el desarrollo de software
+## ¿Por qué hacer testing?
 
-## Testing
-* Criterios para asegurar la calidad de un programa.
-  * Cumple con sus propósitos.
-  * Admite todo tipo de inputs sin causar problemas.
-  * Es usable.
-  * **No rompe todo el sistema al ser aceptado.**
-* Importante en todos los niveles de la organización.
-
-## Manuales
-
-![](./button.gif)
-
-## Automatizados
-
-![](./robot.gif)
-
-## Test Levels
-
-![](./testing pyramid.png)
+![](./it_works_on_my_local.jpg)
 
 ---
 
-![](./testing cup.png)
+* Asegurar que la funcionalidad nueva cumpla con sus requisitos
+* Asegurar que la funcionalidad nueva se integre con el sistema actual
+  * Que no rompa la aplicación
+* Informar expectativas del código nuevo
 
-## Qué debe cumplir un buen test
+  > La función para verificar rut solo recibe 9 dígitos sin guión
 
-* Rápido
-* Testea interfaces, no implementación
-* Detecta bugs
-* Consistente
-* Claro
+## Tipos de testing
 
-<aside class="notes">
-Según Dong Woo Kim para _toast-ui_
-https://medium.com/@toastui/pragmatic-front-end-testing-strategies-1-4a969ab09453
-</aside>
+![En desarrollo usamos los dos primeros niveles](./testing pyramid.png)
+
+## {data-background-iframe="https://www.youtube.com/embed/0GypdsJulKE?controls=0"}
 
 # Testing en Frontend
 
-## ¿Por qué tendría que ser distinto a Backend?
+## Particularidades
 
-* Difícil tener un _oráculo de la verdad_.
-![](./witch.gif)
+* Difícil tener un _oráculo de la verdad_
+  * Backend: Definiciones precisas
+  * Frontend: "Lo quiero un poco mas a la derecha"
+
+![](./can't handle the truth.jpg)
+
 
 <aside class="notes">
 Todo software tiene distintas necesidades. En el backend hay mucha regla de 
@@ -78,7 +65,8 @@ cierto.
 
 ___
 
-* Difícil automatizar test visuales.
+* Difícil automatizar test visuales
+
 ![](./magoo.gif)
 
 <aside class="notes">
@@ -86,7 +74,7 @@ Hay herramientas para verificar que la interfaz no haya cambiado entre cambios,
 pero no hay nada que reemplace el juicio humano.
 </aside>
 
-## ¿Qué se puede hacer?
+## ¿Qué se puede hacer durante el desarrollo de software?
 * Probar manualmente cada cambio.
 * Usar herramientas para hacer _visual diffs_.
 * Usar herramientas para probar la estructura de la página.
