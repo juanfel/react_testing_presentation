@@ -121,7 +121,8 @@ module.exports = grunt => {
 					'lib/**',
 					'images/**',
 					'plugin/**',
-					'**.md'
+                                        '**.md',
+                                        'presentacion/**',
 				],
 				dest: 'reveal-js-presentation.zip'
 			}
@@ -150,10 +151,10 @@ module.exports = grunt => {
 				tasks: 'test'
 			},
 			html: {
-				files: root.map(path => path + '/*.html')
+				files: root.map(path => path + '**/*.html')
 			},
 			markdown: {
-				files: root.map(path => path + '/*.md')
+				files: root.map(path => path + '**/*.md')
 			},
 			options: {
 				livereload: true

@@ -1,0 +1,1 @@
+pandoc -t revealjs -o slides.html slides.md -V revealjs-url="" -f markdown+link_attributes --variable="theme=night-new" --variable="reveal-url=" --to="revealjs" --standalone --verbose --template="template.revealjs" -V notes-server
